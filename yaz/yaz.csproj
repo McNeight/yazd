@@ -3,9 +3,9 @@
   <Import Project="../version.props" />
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <TargetFrameworks>net462;net47;net471;net472;net48;net481;net8.0</TargetFrameworks>
-    <RootNamespace>yaza</RootNamespace>
+    <RootNamespace>yaz</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Authors>Topten Software</Authors>
     <PackageLicenseUrl>https://github.com/toptensoftware/yazd</PackageLicenseUrl>
@@ -15,15 +15,13 @@
     <Description>Easy to use Z80 assembler.</Description>
     <Company>Topten Software</Company>
     <GenerateFullPaths>True</GenerateFullPaths>
-    <OutputPath>..\Build\$(Configuration)\$(MSBuildProjectName)</OutputPath>
-    <IntermediateOutputPath>..\Build\$(Configuration)\$(MSBuildProjectName)\$(TargetFramework)\obj</IntermediateOutputPath>
-    <PackAsTool>true</PackAsTool>
-    <ToolCommandName>yaza</ToolCommandName>
     <Nullable>disable</Nullable>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <AnalysisLevel>latest-all</AnalysisLevel>
+    <BaseOutputPath>..\lib\</BaseOutputPath>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
 
@@ -41,10 +39,6 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\yaz\yaz.csproj" />
   </ItemGroup>
 
 </Project>

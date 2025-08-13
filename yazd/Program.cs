@@ -5,6 +5,8 @@ using System.Text;
 using System.IO;
 using System.Diagnostics;
 
+using yaz;
+
 namespace yazd
 {
 	class Program
