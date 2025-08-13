@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp2.1;net46</TargetFrameworks>
+    <TargetFrameworks>net462;net47;net471;net472;net48;net481;net8.0</TargetFrameworks>
     <RootNamespace>yaza</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Authors>Topten Software</Authors>
@@ -19,11 +19,28 @@
     <IntermediateOutputPath>..\Build\$(Configuration)\$(MSBuildProjectName)\$(TargetFramework)\obj</IntermediateOutputPath>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>yaza</ToolCommandName>
+    <Nullable>disable</Nullable>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <AnalysisLevel>latest-all</AnalysisLevel>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="..\yazd\OpCodes.cs" Link="OpCodes.cs" />
     <Compile Include="..\version.cs" Link="version.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="4.14.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
